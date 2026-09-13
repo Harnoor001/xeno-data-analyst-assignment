@@ -1,4 +1,4 @@
-# Xeno Data Analyst Take-Home: Comm-Log Send Reconciliation
+# Xeno Data Analyst Take Home Assignment: Comm-Log Send Reconciliation
 
 This repository contains my submission for Xeno's Data Analyst Internship Drive 2026 take-home assignment.
 
