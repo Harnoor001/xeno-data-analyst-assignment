@@ -1,8 +1,4 @@
--- Xeno Data Analyst Internship Drive 2026
--- target_base for merchant 501, October 2026, Campaign communications
-
 WITH RECURSIVE campaign_roots AS (
-    -- A root campaign starts a retry family.
     SELECT
         id AS campaign_id,
         id AS root_id
@@ -11,7 +7,6 @@ WITH RECURSIVE campaign_roots AS (
 
     UNION ALL
 
-    -- Every retry inherits the root of its parent, including multi-level retries.
     SELECT
         c.id AS campaign_id,
         r.root_id
@@ -51,10 +46,7 @@ counted_events AS (
     SELECT
         root_id,
         CASE
-            -- A retry family counts a reached customer once across its whole chain.
             WHEN is_retry_family = 1 THEN customer_id
-            -- A standalone campaign counts each delivered send event, even for a
-            -- customer who is independently re-targeted in that same campaign.
             ELSE CAST(log_id AS TEXT)
         END AS counted_entity
     FROM classified_deliveries
