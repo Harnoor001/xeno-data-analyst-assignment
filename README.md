@@ -10,19 +10,3 @@ For merchant `501` in October 2026, the reconciled `target_base` is **22**.
 
 - `xeno_submission.md` - reconciliation bridge, investigation notes, and data observation.
 - `xeno_final_query.sql` - runnable SQLite query that returns `target_base = 22`.
-
-## Run
-
-The supplied dataset is intentionally not included. With Xeno's provided `comm_log.db` available locally, run:
-
-```sh
-sqlite3 comm_log.db < xeno_final_query.sql
-```
-
-Expected output:
-
-```text
-target_base
------------
-22
-```
