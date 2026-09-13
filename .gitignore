@@ -1,0 +1,10 @@
+# Xeno-supplied data and downloaded archive
+data_analyst_assignment/
+drive-download-*.zip
+
+# Local PDF-rendering scratch files
+tmp/
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
